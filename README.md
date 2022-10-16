@@ -1,2 +1,2 @@
-# October-Hackathon-API-Edition-
+# October-Hackathon-API
 for Agora
