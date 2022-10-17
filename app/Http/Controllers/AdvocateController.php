@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdvocateRecuest;
 use App\Models\Advocate;
 use Illuminate\Http\Request;
 use App\Http\Resources\AdvocateResource;
@@ -37,9 +38,27 @@ class AdvocateController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdvocateRecuest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $advocate = Advocate::create([
+            'name' => $request->name,
+            'profile_pic' => $request->profile_pic,
+            'short_bio' => $request->short_bio,
+            'long_bio' => $request->long_bio,
+            'advocate_years_exp' => $request->advocate_years_exp,
+            'company_id' => $request->company_id,
+
+            'youtube' => $request->youtube,
+            'twitter' => $request->twitter,
+            'github' => $request->github,
+        ]);
+
+        return response([
+            'message' => 'Advocate has been created',
+            'advocate' => new AdvocateResource($advocate),
+        ]);
     }
 
     /**
@@ -57,7 +76,7 @@ class AdvocateController extends Controller
                 'advocate' => new AdvocateResource($advocate),
             ]);
         }
-        return response(['error' => 'advocate not found'], 404);
+        return response(['message' => 'advocate not found'], 404);
     }
 
     /**
@@ -91,6 +110,16 @@ class AdvocateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $advocate = Advocate::find($id);
+
+        if ($advocate) {
+            $advocate->delete();
+            return response([
+                'message' => 'Advocate has been deleted successfully!',
+            ]);
+        }
+
+        return response(['message' => 'advocate not found'], 404);
+
     }
 }

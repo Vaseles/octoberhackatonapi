@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyRequest;
 use App\Http\Resources\CompaniesResource;
 use App\Models\Company;
 use Illuminate\Http\Request;
@@ -15,6 +16,7 @@ class CompanyController extends Controller
      */
     public function index()
     {
+        
         return response([
             'companies' => CompaniesResource::collection(Company::all())
         ]);
@@ -36,9 +38,20 @@ class CompanyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompanyRequest $request)
     {
-        //
+        $request->validated($request->all());
+
+        $company = Company::create([
+            'name' => $request->name,
+            'logo' => $request->logo,
+            'summary' => $request->summary,
+        ]);
+
+        return response([
+            'message' => 'U added new company!',
+            'company' => new CompaniesResource($company),
+        ]); 
     }
 
     /**
@@ -90,6 +103,14 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Company::find($id);
+
+        if ($company) {
+            $company->delete();
+            return response([
+                'message' => 'This Company has been deleted!'
+            ]);
+        }
+        return response(['message' => 'Post Not Found, how GeorgeNotFound'],404);
     }
 }

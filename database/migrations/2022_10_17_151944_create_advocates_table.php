@@ -18,13 +18,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('profile_pic');
             $table->text('short_bio');
-            $table->string('long_bio');
+            $table->longText('long_bio');
             $table->float('advocate_years_exp');
             $table->foreignId('company_id')->constraint('companies')->onDelete('cascade');
             
             $table -> string('youtube');
             $table -> string('twitter');
             $table -> string('github');
+            $table->timestamps();
         });
     }
 

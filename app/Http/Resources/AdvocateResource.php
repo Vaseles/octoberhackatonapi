@@ -33,5 +33,8 @@ class AdvocateResource extends JsonResource
                 'github' => $this->github,
             ]
         ];
+
+        
+
     }
 }
