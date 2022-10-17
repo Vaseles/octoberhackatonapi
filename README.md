@@ -9,15 +9,5 @@
  
 <hr>
 
-<h2>Endpoints</h2>
+![image](https://user-images.githubusercontent.com/82625479/196242086-1b979f7f-328d-45f0-9b97-5703250ef00f.png)
 
-<br>
-
-<h3>/advocates</h3>
-<h3>/advocates/:id</h3>
-<h3>/companies</h3>
-<h3>/companies/:id</h3>
-
-<hr>
-
-![image](https://user-images.githubusercontent.com/82625479/196050172-4d8a686b-73fe-41c6-81ac-6befd075b0d9.png)
