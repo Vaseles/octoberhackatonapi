@@ -15,13 +15,13 @@ Route::get('', function () {
     return response([
         'urls' => [
             'company' => [
-                'GET' => 'http://127.0.0.1:8000/api/companies/',
+                'GET all' => 'http://127.0.0.1:8000/api/companies/',
                 'GET' => 'http://127.0.0.1:8000/api/companies/1',
                 'POST' => 'http://127.0.0.1:8000/api/companies/',
                 'DELETE' => 'http://127.0.0.1:8000/api/companies/1',
             ],
             'advocate' => [
-                'GET' => 'http://127.0.0.1:8000/api/advocates',
+                'GET all' => 'http://127.0.0.1:8000/api/advocates',
                 'GET' => 'http://127.0.0.1:8000/api/advocates/1',
                 'POST' => 'http://127.0.0.1:8000/api/advocates',
                 'DELETE' => 'http://127.0.0.1:8000/api/advocates/1',
