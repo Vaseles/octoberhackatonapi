@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "5ad4e812-4bea-454a-9cc0-1ac5e66328cb",
+		"name": "Finding Developer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22973800"
+	},
+	"item": [
+		{
+			"name": "ADVOCATE",
+			"item": [
+				{
+					"name": "Advocates list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/advocates",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"advocates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Advocate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY2NTQ1MTI0LCJpYXQiOjE2NjY1NDQ4MjQsImp0aSI6ImEyN2UxMTUzZjhlMzQ1OTc4ZTczZDI5NmIyYTY4NjU4IiwidXNlcl9pZCI6MX0.Luh35Z00dJ3qLpH7crUwwvBWJifsMShGp7Gi2cT6lfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/advocates/Kisuke Urahara",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"advocates",
+								"Kisuke Urahara"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD NEW Advocate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "Shunsui Sakuranosuke Jirō Kyōraku",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "Shunsui Sakuranosuke Jirō Kyōraku (京楽 次郎 総蔵佐 春水, Kyōraku no Jirō Sakuranosuke Shunsui) is the captain of the 1st Division and Captain-Commander of the Gotei 13. His lieutenants are his niece, Nanao Ise, and Genshirō Okikiba. He is the former captain of the 8th Division.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/advocates",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"advocates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Advocate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/advocates/Vaseles?username=Vaseles&bio=Just Fulstack developer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"advocates",
+								"Vaseles"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Vaseles"
+								},
+								{
+									"key": "bio",
+									"value": "Just Fulstack developer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE advocate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/advocates/Boris",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"advocates",
+								"Boris"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COMPANY",
+			"item": [
+				{
+					"name": "COMPANY LISTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/companies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD COMPANY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Gotei 13",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "The Gotei 13 (護廷十三隊, Goteijūsantai; lit. \"13 Division Imperial Guards\"; Viz \"Thirteen Court Guard Companies\") is the primary military branch of Soul Society and the main military organization most Shinigami join after leaving the Shin'ō Academy.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/companies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endpoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token(LOGIN)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "vaseles",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "{{vaseles}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token Refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY2NTQ1MTI0LCJpYXQiOjE2NjY1NDQ4MjQsImp0aSI6ImEyN2UxMTUzZjhlMzQ1OTc4ZTczZDI5NmIyYTY4NjU4IiwidXNlcl9pZCI6MX0.Luh35Z00dJ3qLpH7crUwwvBWJifsMShGp7Gi2cT6lfY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY2NTQ1MTI0LCJpYXQiOjE2NjY1NDQ4MjQsImp0aSI6ImEyN2UxMTUzZjhlMzQ1OTc4ZTczZDI5NmIyYTY4NjU4IiwidXNlcl9pZCI6MX0.Luh35Z00dJ3qLpH7crUwwvBWJifsMShGp7Gi2cT6lfY",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "vaseles",
+			"value": "54444812Vaseles"
+		},
+		{
+			"key": "Dream",
+			"value": "dv#tK!9z7jx9Yj8"
+		},
+		{
+			"key": "Quackity",
+			"value": "iwannagetlivebook"
+		}
+	]
+}
